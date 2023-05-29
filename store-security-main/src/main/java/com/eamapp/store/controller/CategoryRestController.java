@@ -6,13 +6,13 @@ import com.eamapp.store.model.service.ICategoryService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-
 @CrossOrigin(origins = {"http://localhost:4200"})
 @RestController
 @RequestMapping("api")
 public class CategoryRestController {
 
     private ICategoryService categoryService;
+    
     public CategoryRestController(ICategoryService categoryService){
         this.categoryService = categoryService;
     }
