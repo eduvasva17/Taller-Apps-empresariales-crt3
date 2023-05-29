@@ -46,7 +46,7 @@ public class CategoryServiceImpl implements ICategoryService{
             Optional<Category> category = categoryDao.findById(id);
             if (category.isPresent()){
                 categorys.add(category.get());
-                response.getCategoryResponse().setCategorys(category);
+                response.getCategoryResponse().setCategorys(categorys);
                 response.setMetadata("Ok","00","Respuesta Exitosa");
             }else {
                 response.setMetadata("Failed","-1","Respuesta Fallida");
@@ -72,7 +72,7 @@ public class CategoryServiceImpl implements ICategoryService{
         try{
             Category categorySaved = categoryDao.save(category);
             categorys.add(categorySaved);
-            response.getCategoryResponse().setCategory(categorys);
+            response.getCategoryResponse().setCategorys(categorys);
             response.setMetadata("OK","00","Respuesta Exitosa");
         }catch (Exception e){
             response.setMetadata("Failed","-1","Error al grabar fabricante");
@@ -94,7 +94,7 @@ public class CategoryServiceImpl implements ICategoryService{
         List<Category> categorys = new ArrayList<>();
         try{
             Optional<Category> categorySearch = categoryDao.findById(id);
-            if (mategorySearch.isPresent()){
+            if (categorySearch.isPresent()){
                 //Se actualizara la categoria
                 categorySearch.get().setName(category.getName());
                 categorySearch.get().setDescription(category.getDescription());

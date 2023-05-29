@@ -5,11 +5,12 @@ import lombok.Data;
 
 import java.io.Serial;
 import java.io.Serializable;
+import java.sql.Blob;
 
 @Data
 @Entity
-@Table(name = "product", indexes = @Index(name = "idx_name", unique = true, columnList = "name",  columnList = "price",  columnList = "category_id",  columnList = "maker_id"))
-public class Maker implements Serializable {
+@Table(name = "product", indexes = @Index(name = "idx_name_price_category_maker", unique = true, columnList = "name, price, category_id, maker_id"))
+public class Product implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
