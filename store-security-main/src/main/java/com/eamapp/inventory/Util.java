@@ -1,4 +1,4 @@
-package com.eamapp.inventory.util;
+package com.eamapp.inventory;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;

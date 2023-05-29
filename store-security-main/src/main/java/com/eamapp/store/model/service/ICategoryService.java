@@ -4,8 +4,6 @@ import com.eamapp.store.model.entity.Category;
 import com.eamapp.store.model.response.CategoryResponseRest;
 import org.springframework.http.ResponseEntity;
 
-import java.util.List;
-
 public interface ICategoryService {
     public ResponseEntity<CategoryResponseRest> search();
     public ResponseEntity<CategoryResponseRest> searchById(Long id);
